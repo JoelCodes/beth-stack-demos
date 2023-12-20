@@ -1,15 +1,23 @@
-# Elysia with Bun runtime
+# BETH Stack Demos
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+This repo experiments with the BETH stack:
+
+* *Bun* TypeScript runtime
+* *Elysia.js* Minimalist HTTP Server library
+* *Turso* SQLite Edge Database
+* *HTMX* Minimalist client-side interaction
+
+## Directions
+
+1. Install Bun
+2. Install Bun Dependencies
+
+```cmd
+bun install
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+3. Run the app
 
-Open http://localhost:3000/ with your browser to see the result.
+```cmd
+bun dev
+```
