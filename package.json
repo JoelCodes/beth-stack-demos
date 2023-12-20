@@ -8,7 +8,11 @@
   "dependencies": {
     "@elysiajs/html": "^0.7.3",
     "@elysiajs/static": "^0.7.1",
-    "elysia": "latest"
+    "@libsql/client": "^0.4.0-pre.5",
+    "@prisma/adapter-libsql": "^5.7.1",
+    "@prisma/client": "5.7.1",
+    "elysia": "latest",
+    "prisma": "^5.7.1"
   },
   "devDependencies": {
     "bun-types": "latest"
