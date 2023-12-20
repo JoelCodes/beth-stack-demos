@@ -21,3 +21,5 @@ bun install
 ```cmd
 bun dev
 ```
+
+4. Navigate to `http://localhost:3000`
