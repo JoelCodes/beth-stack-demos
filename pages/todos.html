@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beth Stack</title>
   <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+  <link rel="stylesheet" href="/public/styles.css">
 </head>
-<body>
-  <h1>Todo App</h1>
-  <a href="/">Home</a>
-  <ul hx-get="/api/todos" hx-trigger="load" id="todo-list"></ul>
-  <form hx-post="/api/todos" hx-trigger="submit" hx-target="#todo-list" hx-swap="beforeend">
-    <input type="text" name="title" placeholder="Title">
-    <button type="submit">Add</button>
-  </form>
+<body class="h-full">
+  <div class="container mx-auto">
+
+    <h1 class="font-serif text-3xl py-4 font-bold">Todo App</h1>
+    <p class="py-2">
+      <a href="/" class="transition-colors duration-500 hover:text-blue-700 text-blue-500">← Home</a>
+    </p>
+    <ul role="list" class="divide-y divide-gray-100 bg-white rounded-lg shadow-lg pb-4" hx-get="/api/todos" hx-trigger="load" id="todo-list"></ul>
+    <form hx-post="/api/todos" hx-trigger="submit" hx-target="#todo-list" hx-swap="beforeend">
+      <input type="text" name="title" placeholder="Title">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
 </body>
 </html>
