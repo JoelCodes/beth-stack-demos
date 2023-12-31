@@ -9,11 +9,18 @@ let todoIndex = 3;
 
 // Views
 function TodoLi({todo}:{todo: Todos}){
-  return <li data-todo-id={todo.id} hx-target='closest li'>
-    {todo.title}
-    <input type='checkbox' checked={todo.done} hx-post={`/api/todos/${todo.id}/toggle`} hx-swap='swap'/>
-    <button hx-delete={`/api/todos/${todo.id}`} hx-swap='outerHTML'>Delete</button>
-  </li>
+
+  return <li class="task bg-gray-200 p-3 rounded-md shadow mb-2 flex items-center justify-between" hx-target='closest li' hx-swap='outerHTML'>
+  <span class="task-content text-gray-700">{todo.title}</span>
+  <div class="task-actions">
+      <input type="checkbox" checked={todo.done} hx-post={`/api/todos/${todo.id}/toggle`} class="mr-2 text-blue-500 hover:text-blue-600"/>
+
+      <button hx-delete={`/api/todos/${todo.id}`} class="delete-task text-red-500 hover:text-red-600">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+  </div>
+</li>
+
 }
 
 function DeleteTodoLi({todoId}:{todoId: number|string}){

@@ -2,6 +2,8 @@ import { html } from "@elysiajs/html";
 import { Elysia } from "elysia";
 import { todoController } from "./controllers/todos";
 import { tailwind } from "elysia-tailwind";
+import { CheckersPage } from "./pages/checkers";
+import { TodosPage } from "./pages/todos";
 
 const app = new Elysia()
   .use(html())
@@ -16,8 +18,9 @@ const app = new Elysia()
     },
   }))
   .get('/', () => Bun.file('pages/index.html'))
-  .get('/todos', () => Bun.file('pages/todos.html'))
+  .get('/todos', TodosPage)
   .use(todoController)
+  .get('/checkers', CheckersPage)
   .listen(3000);
 
 console.log(
